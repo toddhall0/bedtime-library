@@ -13,6 +13,15 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  /* Brand tokens — direct references */
+  --color-brand-midnight: var(--brand-midnight);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-rose: var(--brand-rose);
+  --color-brand-soft-navy: var(--brand-soft-navy);
+  --color-brand-muted-cream: var(--brand-muted-cream);
+
+  /* shadcn semantic tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -47,82 +56,94 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * Bedtime Library brand palette.
+ * The app is always dark-mode-ish — midnight navy is the default background.
+ * Hex values:
+ *   #1a1b3a Midnight Navy   – primary background
+ *   #faf6ed Warm Cream      – text on dark, light surfaces
+ *   #d4a574 Amber Gold      – accent, CTAs
+ *   #c8a4a4 Dusty Rose      – secondary accent
+ *   #252749 Soft Navy       – cards, elevated surfaces
+ *   #d8d3c4 Muted Cream     – secondary text
+ */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.75rem;
+
+  --brand-midnight: hsl(239 38% 16%);
+  --brand-cream: hsl(42 57% 95%);
+  --brand-amber: hsl(31 53% 64%);
+  --brand-rose: hsl(0 25% 71%);
+  --brand-soft-navy: hsl(237 33% 22%);
+  --brand-muted-cream: hsl(45 20% 81%);
+
+  --background: var(--brand-midnight);
+  --foreground: var(--brand-cream);
+  --card: var(--brand-soft-navy);
+  --card-foreground: var(--brand-cream);
+  --popover: var(--brand-soft-navy);
+  --popover-foreground: var(--brand-cream);
+  --primary: var(--brand-amber);
+  --primary-foreground: var(--brand-midnight);
+  --secondary: var(--brand-rose);
+  --secondary-foreground: var(--brand-midnight);
+  --muted: var(--brand-soft-navy);
+  --muted-foreground: var(--brand-muted-cream);
+  --accent: var(--brand-amber);
+  --accent-foreground: var(--brand-midnight);
+  --destructive: hsl(0 70% 60%);
+  --destructive-foreground: var(--brand-cream);
+  --border: hsl(42 57% 95% / 12%);
+  --input: hsl(42 57% 95% / 14%);
+  --ring: var(--brand-amber);
+  --chart-1: var(--brand-amber);
+  --chart-2: var(--brand-rose);
+  --chart-3: var(--brand-muted-cream);
+  --chart-4: var(--brand-soft-navy);
+  --chart-5: var(--brand-cream);
+  --sidebar: var(--brand-soft-navy);
+  --sidebar-foreground: var(--brand-cream);
+  --sidebar-primary: var(--brand-amber);
+  --sidebar-primary-foreground: var(--brand-midnight);
+  --sidebar-accent: var(--brand-midnight);
+  --sidebar-accent-foreground: var(--brand-cream);
+  --sidebar-border: hsl(42 57% 95% / 12%);
+  --sidebar-ring: var(--brand-amber);
 }
 
+/* `.dark` mirrors :root — the app is dark by default; class-based toggling is a no-op for now. */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: var(--brand-midnight);
+  --foreground: var(--brand-cream);
+  --card: var(--brand-soft-navy);
+  --card-foreground: var(--brand-cream);
+  --popover: var(--brand-soft-navy);
+  --popover-foreground: var(--brand-cream);
+  --primary: var(--brand-amber);
+  --primary-foreground: var(--brand-midnight);
+  --secondary: var(--brand-rose);
+  --secondary-foreground: var(--brand-midnight);
+  --muted: var(--brand-soft-navy);
+  --muted-foreground: var(--brand-muted-cream);
+  --accent: var(--brand-amber);
+  --accent-foreground: var(--brand-midnight);
+  --destructive: hsl(0 70% 60%);
+  --destructive-foreground: var(--brand-cream);
+  --border: hsl(42 57% 95% / 12%);
+  --input: hsl(42 57% 95% / 14%);
+  --ring: var(--brand-amber);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    font-family: var(--font-sans);
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
   }
 }
