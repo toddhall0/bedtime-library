@@ -30,12 +30,16 @@ A cross-generational bedtime storytelling web app. Parents subscribe; the app ge
 npm install
 
 # 2. Configure environment variables
-cp .env.example .env.local
-# Then open .env.local and fill in real values. The minimum to get
+cp .env.example .env
+# Then open .env and fill in real values. The minimum to get
 # `npm run dev` working is:
 #   DATABASE_URL, DIRECT_URL,
 #   NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY,
 #   SUPABASE_SERVICE_ROLE_KEY
+#
+# Note: use `.env` (not `.env.local`) — the Prisma CLI only auto-loads
+# `.env`, while Next.js reads both. A single `.env` keeps Prisma and
+# Next.js in sync. `.env` is gitignored.
 
 # 3. Apply database migrations against your Supabase project
 npx prisma migrate deploy
