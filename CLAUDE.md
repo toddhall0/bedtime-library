@@ -75,7 +75,7 @@ Note: the original brief targeted Next.js 15 + Tailwind 3 + Prisma 7. We landed 
 
 - Supabase Auth is the source of truth for sessions
 - The `User` table mirrors `auth.users` via shared UUID
-- `src/middleware.ts` refreshes the Supabase session on every request
+- `src/proxy.ts` refreshes the Supabase session on every request (Next.js 16 renamed the `middleware` convention to `proxy`)
 - Server: `createClient()` from `src/lib/supabase/server.ts`
 - Client: `createClient()` from `src/lib/supabase/browser.ts`
 

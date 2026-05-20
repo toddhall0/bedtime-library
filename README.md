@@ -85,7 +85,7 @@ src/
     email.ts            Resend wrapper
     supabase/           Supabase server + browser clients
     utils.ts            cn() and other helpers
-  middleware.ts         Refreshes the Supabase session on every request
+  proxy.ts              Refreshes the Supabase session on every request
 prisma/
   schema.prisma         Database schema
   migrations/           Generated migration SQL
